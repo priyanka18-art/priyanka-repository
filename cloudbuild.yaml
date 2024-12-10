@@ -1,7 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/firm-scout-437316-h0/app-image', '.']
+  args: ['build', '-t', 'us-east1-docker.pkg.dev/firm-scout-437316-h0/joshi-repo/$COMMIT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/firm-scout-437316-h0/app-image']
-images:
-- 'gcr.io/firm-scout-437316-h0/app-image'
+  args: ['push', 'us-east1-docker.pkg.dev/firm-scout-437316-h0/joshi-repo/$COMMIT_SHA']
+options:
+  logging: CLOUD_LOGGING_ONLY
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+
