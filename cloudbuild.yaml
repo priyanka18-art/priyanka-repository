@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/firm-scout-437316-h0/app-image', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/firm-scout-437316-h0/app-image']
+images:
+- 'gcr.io/firm-scout-437316-h0/app-image'
